@@ -1,0 +1,12 @@
+D:\Proyectos_VS\Quala\Core\bin\Debug\net5.0\Core.deps.json
+D:\Proyectos_VS\Quala\Core\bin\Debug\net5.0\Core.dll
+D:\Proyectos_VS\Quala\Core\bin\Debug\net5.0\ref\Core.dll
+D:\Proyectos_VS\Quala\Core\bin\Debug\net5.0\Core.pdb
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.csproj.AssemblyReference.cache
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.dll
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\ref\Core.dll
+D:\Proyectos_VS\Quala\Core\obj\Debug\net5.0\Core.pdb
