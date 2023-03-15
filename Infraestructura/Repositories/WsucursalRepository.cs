@@ -67,6 +67,13 @@ namespace Infraestructura.Repositories
             _entities.UpdateRange(datos);
         }
 
+        public void Delete(Wsucursal dato)
+        {
+            //_context.Entry(dato).State = EntityState.Deleted;
+            //_entities.Attach(dato);
+            _entities.Remove(dato);
+        }
+
         private IQueryable<Wsucursal> Filtro(IQueryable<Wsucursal> data, WsucursalQF filter)
         {
             if (filter.SucCodigo > 0)
@@ -74,6 +81,9 @@ namespace Infraestructura.Repositories
 
             if (!string.IsNullOrEmpty(filter.SucDescripcion))
                 data = data.Where(d => d.SucDescripcion == filter.SucDescripcion);
+
+            if(filter.MndId > 0)
+                data = data.Where(d => d.MndId == filter.MndId);
 
             return data;
         }

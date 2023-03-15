@@ -14,15 +14,24 @@ namespace Infraestructura.Repositories
     public class WmonedaRepository : IWmonedaRepository
     {
         protected readonly DbSet<Wmoneda> _entities;
+        private readonly QDbContext _context;
 
         public WmonedaRepository(QDbContext context)
         {
+            _context = context;
             _entities = context.Set<Wmoneda>();
         }
 
         public async Task Add(Wmoneda dato)
         {
             await _entities.AddAsync(dato);
+        }
+
+        public void Delete(Wmoneda dato)
+        {
+            //_context.Entry(dato).State = EntityState.Deleted;
+            //_entities.Attach(dato);
+            _entities.Remove(dato);
         }
 
         public async Task<List<Wmoneda>> GetAll(WmonedaQF filter)

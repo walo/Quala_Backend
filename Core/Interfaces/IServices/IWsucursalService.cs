@@ -17,7 +17,7 @@ namespace Core.Interfaces.IServices
         Task<CustomResponseDto<List<WsucursalDto>>> GetPaged(WsucursalQF filter);
 
         Task Add(WsucursalDto dato);
+        Task Delete(WsucursalQF filter);
         Task Update(WsucursalQF filter, WsucursalDto dato);
-        Task UpdateRange(WsucursalQF filter, List<Wsucursal> datos);
     }
 }

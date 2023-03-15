@@ -2,6 +2,7 @@
 using Core.DTO;
 using Core.DTO.Custom;
 using Core.Entities;
+using Core.Exceptions;
 using Core.Interfaces;
 using Core.Interfaces.IServices;
 using Core.QueryFilters;
@@ -81,13 +82,20 @@ namespace Core.Services
 
             datoDb.MndNombre = !string.IsNullOrEmpty(dato.MndNombre) ? dato.MndNombre.Trim() : datoDb.MndNombre.Trim();
 
-            // _unitOfWork.WmonedaRepository.Update(dato);
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public Task UpdateRange(List<Wmoneda> datos)
+        public async Task Delete(WmonedaQF filter)
         {
-            throw new NotImplementedException();
+            var _sucQF = new WsucursalQF() { MndId = filter.MndId };
+            var _sucMoneda = await _unitOfWork.WsucursalRepository.GetAll(_sucQF);
+            if (_sucMoneda.Count > 0)
+                throw new BusinessException("No puede eliminar moneda porque tiene relación con sucursales");
+
+            var datoDb = await _unitOfWork.WmonedaRepository.GetById(filter);
+            _unitOfWork.WmonedaRepository.Delete(datoDb);
+            await _unitOfWork.SaveChangesAsync();
         }
+
     }
 }

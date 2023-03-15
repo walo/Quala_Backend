@@ -15,7 +15,8 @@ namespace Core.Interfaces.IRepository
         Task<List<Wmoneda>> GetPaged(WmonedaQF filter);
 
         Task Add(Wmoneda dato);
+        void Delete(Wmoneda dato);
         void Update(Wmoneda dato);
-        void UpdateRange(List<Wmoneda> datos);
+        
     }
 }

@@ -88,9 +88,10 @@ namespace Core.Services
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task UpdateRange(WsucursalQF filter, List<Wsucursal> datos)
+        public async Task Delete(WsucursalQF filter)
         {
-            _unitOfWork.WsucursalRepository.UpdateRange(datos);
+            var datoDb = await _unitOfWork.WsucursalRepository.GetById(filter);
+            _unitOfWork.WsucursalRepository.Delete(datoDb);
             await _unitOfWork.SaveChangesAsync();
         }
     }

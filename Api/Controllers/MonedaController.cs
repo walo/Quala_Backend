@@ -58,5 +58,12 @@ namespace Api.Controllers
             await _service.Update(filter, data);
             return Ok(data);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromQuery] WmonedaQF filter)
+        {
+            await _service.Delete(filter);
+            return Ok(filter);
+        }
     }
 }

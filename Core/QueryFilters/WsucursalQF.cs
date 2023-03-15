@@ -11,5 +11,6 @@ namespace Core.QueryFilters
         public int SucCodigo { get; set; }
         public string SucDescripcion { get; set; }
         public string SucIdentificacion { get; set; }
+        public int MndId { get; set; }
     }
 }

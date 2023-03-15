@@ -17,7 +17,7 @@ namespace Core.Interfaces.IServices
         Task<CustomResponseDto<List<WmonedaDto>>> GetPaged(WmonedaQF filter);
 
         Task Add(WmonedaDto dato);
+        Task Delete(WmonedaQF filter);
         Task Update(WmonedaQF filter, WmonedaDto dato);
-        Task UpdateRange(List<Wmoneda> datos);
     }
 }

@@ -15,7 +15,7 @@ namespace Core.Interfaces.IRepository
         Task<List<Wsucursal>> GetPaged(WsucursalQF filter);
 
         Task Add(Wsucursal dato);
+        void Delete(Wsucursal dato);
         void Update(Wsucursal dato);
-        void UpdateRange(List<Wsucursal> datos);
     }
 }
